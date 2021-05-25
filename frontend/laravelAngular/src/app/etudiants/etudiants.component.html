@@ -1,0 +1,35 @@
+<p>by the hands of wissem rouabeh</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Email</th>
+      <th scope="col">Country</th>
+      <th scope="col">Actions</th>
+      <th scope="col">
+        <button type="button" class="btn btn-primary" (click)="show()">
+          AddEtudiant
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let etudiant of etuds; index as i">
+      <th scope="row">{{ etudiant.id }}</th>
+      <td>{{ etudiant.firstname }}</td>
+      <td>{{ etudiant.lastname }}</td>
+      <td>{{ etudiant.email }}</td>
+      <td>{{ etudiant.country }}</td>
+      <td>
+        <button type="button" class="btn btn-success" style="margin-right: 1%">
+          Edit
+        </button>
+        <button type="button" class="btn btn-danger" (click)="delete(etudiant)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
