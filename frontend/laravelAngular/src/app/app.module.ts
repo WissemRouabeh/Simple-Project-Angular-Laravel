@@ -8,6 +8,8 @@ import { EtudiantUpdateComponent } from './etudiant-update/etudiant-update.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {
     path: 'add',
@@ -15,6 +17,8 @@ const routes: Routes = [
   },
   { path: '', component: EtudiantsComponent },
   { path: 'update/:id', component: EtudiantUpdateComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
@@ -23,6 +27,8 @@ const routes: Routes = [
     AddComponent,
     EtudiantsComponent,
     EtudiantUpdateComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

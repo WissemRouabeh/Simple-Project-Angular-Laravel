@@ -22,4 +22,7 @@ $router->post('etudiants/add','EtudiantController@createEtudiant');
 $router->put('etudiants/update/{id}','EtudiantController@updateEtudiant');
 $router->delete('etudiants/delete/{id}','EtudiantController@deleteEtudiant');
 $router->get('etudiants/index','EtudiantController@grabAllEtudiants');
+$router->post('users/add','UserController@createUser');
+$router->get('users/check/{username}','UserController@checkUser');
+$router->post('users/login','UserController@loginUser');
 });
