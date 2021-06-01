@@ -23,7 +23,12 @@
       <td>{{ etudiant.email }}</td>
       <td>{{ etudiant.country }}</td>
       <td>
-        <button type="button" class="btn btn-success" style="margin-right: 1%">
+        <button
+          type="button"
+          class="btn btn-success"
+          style="margin-right: 1%"
+          routerLink="/update/{{ etudiant.id }}"
+        >
           Edit
         </button>
         <button type="button" class="btn btn-danger" (click)="delete(etudiant)">

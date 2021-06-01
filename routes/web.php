@@ -17,7 +17,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 $router->group(['prefix'=>'api/'],function() use ($router) {
-$router->post('etudiants/view/{id}','EtudiantController@viewEtudiant');
+$router->get('etudiants/view/{id}','EtudiantController@viewEtudiant');
 $router->post('etudiants/add','EtudiantController@createEtudiant');
 $router->put('etudiants/update/{id}','EtudiantController@updateEtudiant');
 $router->delete('etudiants/delete/{id}','EtudiantController@deleteEtudiant');

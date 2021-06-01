@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./etudiant-update.component.css'],
 })
 export class EtudiantUpdateComponent implements OnInit {
-  etudiants: any;
+  etudiant: any;
   public edit: FormGroup;
   id: any;
   constructor(
@@ -30,17 +30,15 @@ export class EtudiantUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.router.snapshot.params['id'];
-    this.etudiantservice.getEtudiants().subscribe((list) => {
-      this.etudiants = list;
-      console.log(list);
-      this.edit.patchValue(this.etudiants);
+    this.etudiantservice.getEtudiant(this.id).subscribe((response) => {
+      this.etudiant = response;
+      this.edit.patchValue(this.etudiant);
     });
   }
   update() {
     const data = this.edit.value;
     this.etudiantservice.updateEtudiant(this.id, data).subscribe((response) => {
       this.edit.reset();
-      console.log('yes', response);
       this.route.navigateByUrl('/');
     });
   }
