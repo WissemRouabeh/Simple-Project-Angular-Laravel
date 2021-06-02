@@ -10,9 +10,28 @@ import { EtudiantsService } from '../services/etudiants.service';
 export class EtudiantsComponent implements OnInit {
   etuds: any;
   etudiant = [];
+  searchinput: String = '';
   constructor(public etudiantservice: EtudiantsService, public route: Router) {}
 
   ngOnInit(): void {
+    this.getAllEtudiants();
+  }
+  search() {
+    if (this.searchinput !== '') {
+      this.etuds = this.etuds.filter(
+        (val: any) => val.firstname == this.searchinput
+      );
+
+      if (this.etuds.length == 0) {
+        alert('No result found');
+      }
+
+      this.searchinput = '';
+    } else {
+      this.getAllEtudiants();
+    }
+  }
+  all() {
     this.getAllEtudiants();
   }
   show() {

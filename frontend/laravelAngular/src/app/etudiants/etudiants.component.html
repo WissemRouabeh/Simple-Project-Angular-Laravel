@@ -38,3 +38,20 @@
     </tr>
   </tbody>
 </table>
+<div class="input-group">
+  <div class="form-outline">
+    <input
+      type="search"
+      id="form1"
+      class="form-control"
+      placeholder="Enter keywords"
+      [(ngModel)]="searchinput"
+    />
+  </div>
+  <button type="button" class="btn btn-primary" (click)="search()">
+    Search
+  </button>
+  <button type="button marginbtnlast" class="btn" (click)="all()">
+    Grab all
+  </button>
+</div>
