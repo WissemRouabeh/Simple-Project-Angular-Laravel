@@ -7,3 +7,15 @@ table {
 .marginbtnlast {
   margin-left: 10px;
 }
+.form-inline {
+  color: wheat;
+}
+#signout {
+  margin-left: 10px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

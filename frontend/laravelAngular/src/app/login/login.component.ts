@@ -34,13 +34,14 @@ export class LoginComponent implements OnInit {
       .subscribe((response) => {
         const succes = 'Login Successfully';
         this.message = response;
+
         console.log(response);
 
+        localStorage.setItem('logged', this.username);
+
         const ti = timer(1000, 1000);
-        this.message === succes &&
-          ti.subscribe((t) => {
-            this.route.navigateByUrl('/');
-          });
+
+        this.message === succes && this.route.navigateByUrl('/');
       });
   }
 }

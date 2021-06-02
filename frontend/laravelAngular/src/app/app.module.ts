@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AboutComponent } from './about/about.component';
 const routes: Routes = [
   {
     path: 'add',
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: '', component: EtudiantsComponent },
   { path: 'update/:id', component: EtudiantUpdateComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'register', component: RegisterComponent },
 ];
 
@@ -29,6 +31,7 @@ const routes: Routes = [
     EtudiantUpdateComponent,
     LoginComponent,
     RegisterComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

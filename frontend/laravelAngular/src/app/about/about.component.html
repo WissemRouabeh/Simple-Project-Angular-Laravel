@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Etudiant space</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarText"
+    aria-controls="navbarText"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/add">Add etudiant</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">@{{ username }}</form>
+    <button
+      id="signout"
+      type="button"
+      class="btn btn-danger"
+      (click)="signout()"
+    >
+      Signout
+    </button>
+  </div>
+</nav>
+
+<div class="card border-secondary mb-3" style="width: 100%">
+  <div class="card-header">Contact me</div>
+  <div class="card-body text-secondary">
+    <h5 class="card-title">Find out below how you can contact me</h5>
+    <p class="card-text">
+      Facebook:
+      <a href="https://www.fb.me/WissemRouabeh">
+        https://www.fb.me/WissemRouabeh</a
+      >
+      <br />
+      <a href="http://fb.me/Wissem.Rouabeh">
+        Github: http://fb.me/Wissem.Rouabeh</a
+      ><br />
+      Whatsapp: +216 22 234 528
+    </p>
+  </div>
+  <footer id="footer" class="bg-light text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2021 Copyright:
+      <a class="text-dark" href="https://github.com/WissemRouabeh"
+        >Wissem Rouabeh</a
+      >
+    </div>
+  </footer>
+</div>

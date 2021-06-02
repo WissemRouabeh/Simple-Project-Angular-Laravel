@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AddComponent implements OnInit {
   etudiants: any;
+  username: String = '';
+
   public add: FormGroup;
   constructor(
     public formbuilder: FormBuilder,
@@ -27,10 +29,14 @@ export class AddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.etudiantservice.getEtudiants().subscribe((list) => {
-      this.etudiants = list;
-      console.log(list);
-    });
+    if (localStorage.length < 1) this.route.navigateByUrl('/login');
+    else {
+      this.username = localStorage.getItem('logged') || 'none';
+      this.etudiantservice.getEtudiants().subscribe((list) => {
+        this.etudiants = list;
+        console.log(list);
+      });
+    }
   }
   onadd() {
     const data = this.add.value;
@@ -38,5 +44,9 @@ export class AddComponent implements OnInit {
       console.log('yes', response);
       this.route.navigateByUrl('/');
     });
+  }
+  signout() {
+    localStorage.clear();
+    this.route.navigateByUrl('/login');
   }
 }
